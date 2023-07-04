@@ -1,0 +1,82 @@
+    //const questionRegExp = /\?\s*$/;
+    // const isQuestion = /^\s*([Ww]ho|[Ww]hat|[Ww]hen|[Ww]here|[Ww]hy|[Hh]ow|[Ii]s|[Aa]re|[Cc]an|[Mm]ay|[Ss]hould|[Dd]o)\b.*\?\s*$|/;
+    // const hasLanguage = /^(?=.*?\bJavaScript\b)|(?=.*?\TypeScript\b).*\?$/;
+    // const regexNoun = /\b(i|[Ww]e|[Yy]our|[Mm]e)\b/g;
+    // \b(I|we|you|your)\b
+
+    /*  const containsQuestion = isQuestion.test(line.trim());
+      const validQuestion = hasLanguage.test(line.trim());
+      const ISNoun = regexNoun.test(line.trim()); */
+
+    // console.log(containsQuestion,validQuestion, !ISNoun)
+
+    /* console.log("_______________________________________")
+const regex = /^(?=.*?\bJavaScript\b)(?=.*?\bprogramming\b)(?=.*?\blanguages\b).*\?$/;
+const sentence = " What are some programming languages for JavaScript?";
+const isQuestionWithLanguages = regex.test(sentence);
+console.log(isQuestionWithLanguages); // true
+ */
+
+
+
+
+/* Working test */
+  //const regex = /^(?:[^`]*`){3}(?:[^`]*`){3}$/;
+  //const regex = /^(?:[^`]*`){3}(?:[^`]*`){3}$/s;
+    //const regexForLanguage = /`{3}\s+(.*)/gm; /`{3}\s{1}(\S.+)/gm;
+/* 
+const BacticsRegex = /`(?:[^`\\]|\\.)*`/;
+const codeRegex =  /(```\w*\s[\s\S]*?\n```)/;
+const programmingCodeRegex = /^(?=.*\b(var|let|const)\b)(?=.*\b(function|class|if|for|while)\b).*$/gi;
+
+const IsValidBactics = /^`(.*)`$/;
+
+
+
+const IsBackTicsValid = IsValidBactics.test(line);
+const IsStringContainsCode = programmingCodeRegex.test(line);
+console.log(IsBackTicsValid,IsStringContainsCode) */
+
+/* end */
+
+
+/* Bactics Codes */
+
+/* ---not working properly------
+function isEnclosedInBackticks(str) {
+  //const BacticsString = /^\s*`\s{3}\s*$/gm;
+  const regex = /^`(.*)`$/;
+  if(regex.test(str)){
+    return true;
+  }
+  return false;
+}
+----------- Not working properly-----------
+ function checkEqualNumberBactics(str){
+  const regex = /(?<!`)```(?:(?!```)[\s\S])*?(?:(?<![`\\])```)/
+  if(regex.test(str)){
+    return true
+  }
+  return false;
+} */
+
+/* 
+--- working properly end bactics was not capturing------
+function checkEqualNumberBactiks(str){
+  let DesiredAnswerText = str.pop(); 
+const regex = /`{3}[\s\S]*?`{3}/g; 
+const matches = DesiredAnswerText.match(regex);
+let count = 0; 
+console.log(matches[0].match(/`/g))
+matches.forEach(match => {
+  count += (match.match(/`/g) || []).length;
+});
+console.log(count)
+if (count % 3 === 0) {
+  console.log('\x1b[32m Equal counts of backticks found!\x1b[0m');
+  return true;
+} else { 
+  console.log('\x1b[31m Unequal counts of backticks found.\x1b[0m');
+  return false;
+}
+} */
